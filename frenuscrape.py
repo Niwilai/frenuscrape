@@ -4,9 +4,19 @@ from lxml import html
 import requests
 
 baseurl = "x"
+num = 2
+pages = []
 
-for x in range(0, 1):
-    url = baseurl
+for n in range(0, num):
+    pages.append("page-%s" % (n))
+
+print(pages)
+
+for z in pages:
+    page = "%s/%s" % (baseurl, z)
+    print(page)
+
+    url = page
     page = requests.get(url)
     tree = html.fromstring(page.content)
 
