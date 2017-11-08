@@ -1,5 +1,5 @@
 # frenuscrape
-A little python scraper
+A little Python scraper to find imgurs
 
 Instructions:
 
