@@ -1,7 +1,7 @@
 # frenuscrape
-A little Python scraper to find imgurs
+**A little Python scraper to find Imgurs on given website**
 
-Instructions:
-
-  - pip install lxml
-  - pip install requests
+Dependencies:
+  - lxml
+  - requests
+  - shutil
