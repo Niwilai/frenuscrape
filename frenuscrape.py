@@ -4,7 +4,7 @@ from lxml import html
 import requests
 import shutil
 
-baseurl = "x"
+baseurl = "to fill"
 num = 100
 counter = 0
 pages = []
@@ -14,8 +14,8 @@ for n in range(1, num):
 
 print(pages)
 
-for z in pages:
-    page = "%s/%s" % (baseurl, z)
+for topic in pages:
+    page = "%s/%s" % (baseurl, topic)
     print(page)
 
     url = page
@@ -24,16 +24,16 @@ for z in pages:
 
     imgur = tree.xpath('//a/@href[starts-with(., "x/thread/")]')
 
-    for x in imgur:
-        url = x
+    for links in imgur:
+        url = links
         page = requests.get(url)
         tree = html.fromstring(page.content)
         imgurr = tree.xpath('//a/@href[starts-with(., "https://imgur.com/") or starts-with(., "http://imgur.com/")]')
 
         if len(imgurr) > 0:
-            for y in imgurr:
+            for image in imgurr:
                 counter += 1
-                url = y
+                url = image
                 page = requests.get(url)
                 tree = html.fromstring(page.content)
                 imgurrr = tree.xpath('//a/@href[contains(., "i.imgur")]')
